@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './App.css'
 
 function App() {
-  const [count,setCount] = useState(1);
+  const [count, setCount] = useState(1);
   const [winner, setWinner] = useState('');
   const [char, setChar] = useState('X');
   const [matrix, setMatrix] = useState([
@@ -20,55 +20,60 @@ function App() {
   const checkWinner = () => {
     //Check row
     if (
-      matrix[0][0] && 
-      matrix[0][0] === matrix[0][1] && 
+      matrix[0][0] &&
+      matrix[0][0] === matrix[0][1] &&
       matrix[0][1] === matrix[0][2]) {
       setWinner('Player ' + matrix[0][0] + ' is a winner')
+      setCount(1)
     }
-    if (matrix[1][0] && 
-      matrix[1][0] === matrix[1][1] && 
+
+    else if (matrix[1][0] &&
+      matrix[1][0] === matrix[1][1] &&
       matrix[1][1] === matrix[1][2]) {
       setWinner('Player ' + matrix[1][0] + ' is a winner')
+      setCount(1)
     }
-    if (matrix[2][0]  && 
-      matrix[2][0] === matrix[2][1] && 
+
+    else if (matrix[2][0] &&
+      matrix[2][0] === matrix[2][1] &&
       matrix[2][1] === matrix[2][2]) {
       setWinner('Player ' + matrix[2][0] + ' is a winner')
+      setCount(1)
     }
 
     // Check column
-    if (matrix[0][0] && 
-      matrix[0][0] === matrix[1][0] && 
+    else if (matrix[0][0] &&
+      matrix[0][0] === matrix[1][0] &&
       matrix[1][0] === matrix[2][0]) {
       setWinner('Player ' + matrix[0][0] + ' is a winner')
+      setCount(1)
     }
-    if (matrix[0][1] && 
-      matrix[0][1] === matrix[1][1] && 
+    else if (matrix[0][1] &&
+      matrix[0][1] === matrix[1][1] &&
       matrix[1][1] === matrix[2][1]) {
       setWinner('Player ' + matrix[0][1] + ' is a winner')
+      setCount(1)
     }
-    if (matrix[0][2] && 
-      matrix[0][2] === matrix[1][2] && 
+    else if (matrix[0][2] &&
+      matrix[0][2] === matrix[1][2] &&
       matrix[1][2] === matrix[2][2]) {
       setWinner('Player ' + matrix[0][2] + ' is a winner')
+      setCount(1)
     }
-
     //Check Diagonal
-    if (matrix[0][0] && 
-      matrix[0][0] === matrix[1][1] && 
+    else if (matrix[0][0] &&
+      matrix[0][0] === matrix[1][1] &&
       matrix[1][1] === matrix[2][2]) {
       setWinner('Player ' + matrix[2][2] + ' is a winner')
+      setCount(1)
     }
-    if (matrix[0][2] && 
-      matrix[0][2] === matrix[1][1] && 
+    else if (matrix[0][2] &&
+      matrix[0][2] === matrix[1][1] &&
       matrix[1][1] === matrix[2][0]) {
       setWinner('Player ' + matrix[2][0] + ' is a winner')
+      setCount(1)
     }
-    if(count===9){
-      setWinner("Match has been drawn");
 
-      
-    }
   }
 
   const handleClick = (r, c) => {
@@ -77,7 +82,7 @@ function App() {
     tempMatrix[r][c] = char;
     setMatrix(tempMatrix);
     setChar(char === 'X' ? 'O' : 'X');
-    setCount(count+1)
+    setCount(count + 1)
     console.log(count)
     checkWinner();
   }
@@ -88,7 +93,7 @@ function App() {
       <div className='alignCenter board' >
         {!winner && <p>{char} turn now</p>}
         <div className='gameBoard' >
-          {winner || 
+          {winner ||
             matrix.map((row, rIndex) => (
               <div className='row'>
                 {
