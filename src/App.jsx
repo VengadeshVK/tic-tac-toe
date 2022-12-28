@@ -121,6 +121,7 @@ function App() {
             ['', '', ''],
           ])
           setChar('X')
+          setCount(1)
         }}>Restart Game</button>
       </div>
     </div>
