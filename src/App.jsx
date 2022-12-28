@@ -67,12 +67,12 @@ function App() {
     if (matrix[0][0] && 
       matrix[0][0] === matrix[1][1] && 
       matrix[1][1] === matrix[2][2]) {
-      setWinner('Player ' + matrix[0][0] + ' is a winner')
+      setWinner('Player ' + matrix[2][2] + ' is a winner')
     }
     if (matrix[0][2] && 
       matrix[0][2] === matrix[1][1] && 
       matrix[1][1] === matrix[2][0]) {
-      setWinner('Player ' + matrix[0][2] + ' is a winner')
+      setWinner('Player ' + matrix[2][0] + ' is a winner')
     }
     if(count===9){
       setWinner("Match has been drawn");
