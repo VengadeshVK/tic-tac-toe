@@ -50,6 +50,7 @@ button{
   height: 5vh;
   width: 20vw;
   font-size: 1.5rem;
-  background-color: rgba(120, 243, 204, 0.667);
+  background-color: rgba(12, 190, 15, 0.607);
+  border-radius: 12px;
 
 }
