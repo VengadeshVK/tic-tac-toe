@@ -1,0 +1,55 @@
+.App{
+  background-image: linear-gradient(to right,#8FB9A8,#F1828D,#765D69);
+  color: rgb(236, 225, 225);
+  height: 100vh;
+}
+
+.header{
+  font-size: 2rem;
+  font-weight: 900;
+  height: 8vh;
+  border-bottom: 5px solid rgba(255, 255, 255, 0.699);
+}
+
+.alignCenter{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.board{
+  height: 92vh;
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  font-weight: 900;
+  justify-content: space-evenly;
+}
+
+.row{
+  display: flex;
+  height: 20vh;
+}
+
+.cell{
+  width: 15vw;
+  border: 5px solid white;
+  font-size: 6rem;
+}
+
+.yellow{
+  background-color: rgba(56, 194, 249, 0.591);
+  color: white;
+}
+
+.orange{
+  background-color: rgba(255, 121, 159, 0.541);
+  color: white;
+}
+button{
+  height: 5vh;
+  width: 20vw;
+  font-size: 1.5rem;
+  background-color: rgba(120, 243, 204, 0.667);
+
+}
