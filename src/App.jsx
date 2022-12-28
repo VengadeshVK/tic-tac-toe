@@ -59,7 +59,7 @@ function App() {
     }
     if (matrix[0][2] && 
       matrix[0][2] === matrix[1][2] && 
-      matrix[2][2]) {
+      matrix[1][2] === matrix[2][2]) {
       setWinner('Player ' + matrix[0][2] + ' is a winner')
     }
 
